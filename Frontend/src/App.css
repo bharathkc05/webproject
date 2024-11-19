@@ -1,0 +1,12 @@
+/* Apply globally in your CSS file (e.g., index.css) */
+body {
+    overflow-y: scroll;           /* Allows scrolling without scrollbar */
+    -ms-overflow-style: none;      /* Hides scrollbar in Internet Explorer and Edge */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  body::-webkit-scrollbar {
+    display: none;
+    
+  }
+

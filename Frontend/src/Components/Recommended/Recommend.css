@@ -1,0 +1,198 @@
+/* Base Styles */
+.recommend-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+  width: 100%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  justify-items: center;
+  box-sizing: border-box;
+  padding: 35px;
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto; /* Separating name and description with specific height for name */
+  grid-gap: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e6f7ff, #f0f5ff);
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: #b0c4de;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-name {
+  font-weight: 900;
+  color: #810202;
+  font-size: 15px;
+  margin-top: 10px;
+  height: 40px; /* Specify height for the name */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.product-description {
+  margin: 10px 0;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.price::before {
+  content: "₹";
+  margin-right: 4px;
+}
+
+.price {
+  font-size: 20px;
+  color: #28a745;
+  font-weight: bold;
+  margin: 10px 0;
+  display: block;
+}
+
+.add-to-cart {
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #f4511e;
+}
+
+/* Responsive Styles */
+
+/* For Tablets */
+@media (max-width: 768px) {
+  .recommend-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+  }
+
+  .product-card {
+    width: 180px;
+  }
+
+  .product-name {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .add-to-cart {
+    font-size: 12px;
+  }
+}
+
+/* For Smartphones */
+@media (max-width: 480px) {
+  .recommend-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .product-card {
+    width: 160px;
+  }
+
+  .image {
+    height: 120px;
+  }
+
+  .product-name {
+    font-size: 12px;
+  }
+
+  .product-description {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .add-to-cart {
+    font-size: 11px;
+  }
+}
+
+/* For Large Screens */
+@media (min-width: 1200px) {
+  .recommend-container {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+
+  .product-card {
+    width: 220px;
+  }
+
+  .product-name {
+    font-size: 16px;
+  }
+
+  .product-description {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .add-to-cart {
+    font-size: 14px;
+  }
+}

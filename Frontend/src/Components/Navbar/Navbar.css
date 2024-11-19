@@ -1,0 +1,190 @@
+/* Navbar Container */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    z-index: 1000;
+}
+
+/* Body Padding to Prevent Overlap with Fixed Navbar */
+body {
+    margin: 0;
+    padding-top: 80px;
+}
+
+/* Navbar Logo */
+.nav-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.log{
+    height: 80px;
+    padding-left: 60px;
+}
+
+/* Navbar Links Styling */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+}
+
+/* Home and Menu Link Styling */
+.hme,
+.mnu {
+    padding: 10px 20px;
+    border: 1px solid #4A4A4A;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover Effect for Home and Menu Links */
+.hme:hover,
+.mnu:hover {
+    background-color: #F0F0F0;
+    color: #606061;
+}
+
+/* Login and Cart Section */
+.nav-login-cart {
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+    gap: 45px;
+}
+
+/* Login Button Styling */
+.nav-login-cart button {
+    width: 157px;
+    height: 58px;
+    outline: 1px solid #4A4A4A;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: white;
+    color: #333333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect for Login Button */
+.nav-login-cart button:hover {
+    background-color: #F0F0F0;
+    color: #606061;
+}
+
+/* Cart Icon Styling */
+.nav-login-cart i {
+    font-size: 24px;
+    color: #333333;
+    margin-right: -8px;
+}
+
+/* Cart Count Badge Styling */
+.nav-cart-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -15px;
+    margin-top: -30px;
+    background: #D32F2F;
+    color: yellow;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+/* General Link Styling */
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Active state styling for Home and Menu links */
+.hme.active ,.mnu.active{
+    background-color: #008080;
+    color: #ffffff;
+}
+
+/* Hamburger Icon */
+.nav-hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: block; /* Always visible on all screens */
+    color: #333333;
+    position: absolute;
+    left: 20px; /* Align it to the left */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Slider Menu */
+.nav-slider {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -251px; /* Hidden offscreen initially */
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    padding-top: 60px;
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.nav-slider.open {
+    display: block;
+    transform: translateX(250px); /* Slide in from left */
+}
+
+.nav-slider .nav-item {
+    color: #fff;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.nav-slider .nav-item.active {
+    background-color: #555;
+}
+
+/* Close button in slider */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide desktop menu */
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+}
+

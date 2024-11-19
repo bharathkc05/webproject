@@ -1,0 +1,73 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    padding: 20px;
+    background-color: #dcd3c2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  p {
+    margin: 5px 0 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .save-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .success-message, .error-message {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .success-message {
+    color: green;
+  }
+  
+  .error-message {
+    color: red;
+  }
+
+  form{
+    padding: 10px;
+    border-radius: 8px;
+  }
+  

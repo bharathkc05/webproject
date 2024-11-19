@@ -1,0 +1,229 @@
+/* Main Hero Container */
+.hero {
+    display: flex;
+    flex-direction: column; /* Stack the slideshow and hero-left vertically */
+    align-items: center;
+    width: 100%;
+}
+
+/* Hero Slider Container */
+.hero-slider {
+    position: relative;
+    width: 80%;
+    height: 460px;
+    width: 1400px;;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px; /* Add space between slider and hero-left content */
+}
+
+/* Remove background-image from CSS */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    left: 0;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Hero Content inside each slide */
+.hero-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #333;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 43%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1;
+    width: 20px;
+}
+
+.nav-button.prev {
+    left: 10px;
+}
+
+.nav-button.next {
+    right: 10px;
+}
+
+.nav-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Hero Left Section - Content Below Slider */
+.hero-left {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+}
+
+.hero-left h2 {
+    font-size: 3rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.handicon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.handicon p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f56342;
+    margin: 0;
+}
+
+.handicon img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.hero-left p {
+    font-size: 1.5rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.hero-left p:nth-child(2) {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 15px;
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    /* For tablets and small laptops */
+    .hero-slider {
+        width: 90%;
+        height: 350px; /* Adjust slider height */
+    }
+
+    .hero-left {
+        width: 90%; /* Make the hero-left take more space */
+        padding: 30px;
+    }
+
+    .hero-left h2 {
+        font-size: 2.5rem; /* Adjust heading font size */
+    }
+
+    .hero-left p {
+        font-size: 1.3rem; /* Adjust paragraph font size */
+    }
+
+    .handicon img {
+        width: 45px; /* Slightly reduce icon size */
+    }
+}
+
+@media (max-width: 768px) {
+    /* For mobile phones and smaller tablets */
+    .hero{
+        padding-top: 85px;
+    }
+    .hero-slider {
+        width: 100%;
+        height: 250px; /* Smaller height for mobile */
+    }
+
+    .hero-left {
+        width: 90%; /* Adjust width for mobile screens */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .hero-left h2 {
+        font-size: 2rem; /* Smaller font size for heading */
+    }
+
+    .hero-left p {
+        font-size: 1.1rem; /* Smaller font size for paragraph */
+    }
+
+    .handicon img {
+        width: 40px; /* Adjust icon size */
+    }
+
+    .handicon p {
+        font-size: 1rem; /* Smaller text for handicon */
+    }
+
+    /* Adjusting the button positions */
+    .nav-button {
+        font-size: 20px; /* Smaller font size for navigation buttons */
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For smaller mobile screens */
+    .hero-slider {
+        height: 200px; /* Reduce the height of slider */
+    }
+
+    .hero-left {
+        width: 95%; /* Almost full width for mobile */
+        padding: 15px; /* Further reduce padding */
+    }
+
+    .hero-left h2 {
+        font-size: 1.5rem; /* Smaller heading font */
+    }
+
+    .hero-left p {
+        font-size: 1rem; /* Smaller paragraph font */
+    }
+
+    .handicon img {
+        width: 35px; /* Further reduce icon size */
+    }
+
+    .handicon p {
+        font-size: 0.9rem; /* Smaller font for handicon text */
+    }
+
+    .nav-button {
+        font-size: 18px; /* Even smaller navigation buttons */
+        padding: 6px 12px;
+    }
+}

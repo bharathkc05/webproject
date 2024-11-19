@@ -1,0 +1,136 @@
+/* Footer Styling */
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* Footer Content Layout */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px; /* Limit width for larger screens */
+    margin: 0 auto;
+}
+
+/* Footer Sections (Left, Middle, Right) */
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Footer Section Titles */
+.footer-left h4, .footer-middle h5, .footer-right h5 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Footer Text & Links */
+.footer-left p, .footer-middle ul, .footer-right .social-links {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-middle ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-middle ul li {
+    margin: 5px 0;
+}
+
+.footer-middle ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-middle ul li a:hover {
+    color: #00aaff;
+}
+
+.footer-right .social-links a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-right .social-links a:hover {
+    color: #00aaff;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #bbb;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        padding: 15px 0;
+    }
+
+    .footer-right .social-links a {
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px 0;
+    }
+
+    .footer-content {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        padding: 10px 0;
+    }
+
+    .footer-left h4, .footer-middle h5, .footer-right h5 {
+        font-size: 16px;
+    }
+
+    .footer-left p, .footer-middle ul, .footer-right .social-links {
+        font-size: 12px;
+    }
+
+    .footer-right .social-links a {
+        font-size: 16px;
+    }
+}
