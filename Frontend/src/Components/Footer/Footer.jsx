@@ -29,7 +29,7 @@ const Footer = () => {
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/banashankar_rt/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram"></i>
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
@@ -40,7 +40,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; 2024 Company Name. All rights reserved.</p>
+        <p>&copy; 2024 Velvet Bites. All rights reserved.</p>
       </div>
     </div>
   );

@@ -42,19 +42,18 @@ export const Login = () => {
     }
   };
 
-  // Sign-In Handler
   const handleSignIn = async (e) => {
     e.preventDefault();
-
+  
     const { email, password } = formData;
-
+  
     try {
       const response = await axios.post('http://localhost:4000/login', { email, password });
-
+  
       if (response.data.success) {
         const token = response.data.token;
         localStorage.setItem('token', token);
-
+  
         // Sync local cart with backend
         const localCart = JSON.parse(localStorage.getItem('cart')) || [];
         if (localCart.length > 0) {
@@ -64,23 +63,28 @@ export const Login = () => {
             { headers: { Authorization: `Bearer ${token}` } }
           );
         }
-
+  
         // Fetch updated cart from backend
         const cartResponse = await axios.get('http://localhost:4000/cart', {
           headers: { Authorization: `Bearer ${token}` }
         });
-
+  
         if (cartResponse.data.cartData) {
           localStorage.setItem('cart', JSON.stringify(cartResponse.data.cartData));
         }
-
+  
         navigate('/'); // Redirect after successful login
       } else {
-        setError('Incorrect credentials.');
+        // If `success` is false, display the error message from the backend
+        setError(response.data.errors || 'Login failed. Please try again.');
       }
     } catch (error) {
-      console.error('Sign-In Error:', error.response || error.message);
-      setError('Incorrect credentials. Please try again.');
+      // Handle errors returned by the backend
+      if (error.response && error.response.data && error.response.data.errors) {
+        setError(error.response.data.errors); // Show backend error in the frontend
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
     }
   };
 
